@@ -15,11 +15,10 @@ A full-stack TypeScript SMS conversation system. The API receives Twilio webhook
 
 ## Test URLs
 
-- Public web app: `https://lahzo-sms-admin.<cloudflare-subdomain>.workers.dev`
+- Public web app: `https://lahzoalvoradadevweb.mirellyssl1.workers.dev/`
 - Local web app: `http://localhost:5174`
 - Local test console: `http://localhost:5174/test`
 - Local API with Docker: `http://localhost:3001/health`
-- EC2 API: `http://34.226.94.43/health`
 - Twilio phone number used in the flow: `+15862044115`
 
 Set `VITE_API_BASE_URL` in Cloudflare to the public API URL before deploying the frontend.
