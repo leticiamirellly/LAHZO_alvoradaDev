@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite --strictPort",
     "build": "vite build",
+    "deploy": "wrangler deploy",
+    "deploy:preview": "wrangler versions upload",
     "preview": "vite preview",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run"
@@ -22,6 +24,7 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^4.7.0",
     "typescript": "^5.9.3",
-    "vite": "^6.4.3"
+    "vite": "^6.4.3",
+    "wrangler": "^4.99.0"
   }
 }
