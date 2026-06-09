@@ -1,0 +1,50 @@
+{
+  "name": "conversational-sms-system",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently --kill-others-on-fail -n api,worker,admin -c blue,magenta,green \"npm run dev:api\" \"npm run dev:worker\" \"npm run dev:admin\"",
+    "dev:api": "npm -w @app/api run dev",
+    "dev:worker": "npm -w @app/worker run dev",
+    "dev:admin": "npm -w @app/admin run dev",
+    "docker:up": "bash scripts/docker-up.sh",
+    "docker:up:detached": "bash scripts/docker-up.sh -d",
+    "docker:down": "docker compose down --remove-orphans",
+    "docker:logs": "docker compose logs -f",
+    "docker:ps": "docker compose ps -a",
+    "build": "npm run build --workspaces --if-present",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "tsc -b",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "db:generate": "prisma generate --schema packages/db/prisma/schema.prisma",
+    "db:migrate": "prisma migrate dev --schema packages/db/prisma/schema.prisma",
+    "db:deploy": "prisma migrate deploy --schema packages/db/prisma/schema.prisma",
+    "db:studio": "prisma studio --schema packages/db/prisma/schema.prisma"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.29.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^22.15.33",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.5.2",
+    "concurrently": "^9.1.2",
+    "eslint": "^9.29.0",
+    "jsdom": "^26.1.0",
+    "prisma": "^6.9.0",
+    "supertest": "^7.1.1",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.34.1",
+    "vite": "^6.3.5",
+    "vitest": "^3.2.4"
+  }
+}

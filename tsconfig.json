@@ -1,0 +1,14 @@
+{
+  "files": [],
+  "references": [
+    { "path": "packages/config" },
+    { "path": "packages/contracts" },
+    { "path": "packages/db" },
+    { "path": "packages/events" },
+    { "path": "packages/queue" },
+    { "path": "packages/twilio" },
+    { "path": "apps/api" },
+    { "path": "apps/worker" },
+    { "path": "apps/admin" }
+  ]
+}

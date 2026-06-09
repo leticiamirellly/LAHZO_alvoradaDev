@@ -1,0 +1,22 @@
+{
+  "name": "@app/worker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx watch src/index.ts",
+    "start": "tsx src/index.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@repo/config": "1.0.0",
+    "@repo/db": "1.0.0",
+    "@repo/events": "1.0.0",
+    "@repo/queue": "1.0.0",
+    "@repo/twilio": "1.0.0",
+    "bullmq": "^5.56.0",
+    "dotenv": "^16.5.0"
+  }
+}
